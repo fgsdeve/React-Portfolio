@@ -1,11 +1,15 @@
-import React from "react";
+import React from 'react';
+import { AppBar, Toolbar, Typography } from '@mui/material';
 import Navigation from './Navigation';
 
-const Header = () => (
-    <header>
-        <h1>Developer's Name</h1>
-        <Navigation/>
-    </header>
+const Header = ({ setPage }) => (
+  <AppBar position="static">
+    <Toolbar>
+      <Typography variant="h6" style={{ flexGrow: 1 }}>
+      </Typography>
+      <Navigation setPage={setPage} />
+    </Toolbar>
+  </AppBar>
 );
 
 export default Header;

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Button, ButtonGroup } from '@mui/material';
 
 const Navigation = ({ setPage }) => {
   const [active, setActive] = useState('AboutMe');
@@ -9,14 +10,12 @@ const Navigation = ({ setPage }) => {
   };
 
   return (
-    <nav>
-      <ul>
-        <li className={active === 'AboutMe' ? 'active' : ''} onClick={() => handleNavClick('AboutMe')}>About Me</li>
-        <li className={active === 'Portfolio' ? 'active' : ''} onClick={() => handleNavClick('Portfolio')}>Portfolio</li>
-        <li className={active === 'Contact' ? 'active' : ''} onClick={() => handleNavClick('Contact')}>Contact</li>
-        <li className={active === 'Resume' ? 'active' : ''} onClick={() => handleNavClick('Resume')}>Resume</li>
-      </ul>
-    </nav>
+    <ButtonGroup variant="text" color="inherit">
+      <Button onClick={() => handleNavClick('AboutMe')} color={active === 'AboutMe' ? 'secondary' : 'inherit'}>About Me</Button>
+      <Button onClick={() => handleNavClick('Portfolio')} color={active === 'Portfolio' ? 'secondary' : 'inherit'}>Portfolio</Button>
+      <Button onClick={() => handleNavClick('Contact')} color={active === 'Contact' ? 'secondary' : 'inherit'}>Contact</Button>
+      <Button onClick={() => handleNavClick('Resume')} color={active === 'Resume' ? 'secondary' : 'inherit'}>Resume</Button>
+    </ButtonGroup>
   );
 };
 

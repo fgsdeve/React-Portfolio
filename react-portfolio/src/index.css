@@ -37,9 +37,7 @@ main {
   margin: 1rem 0;
 }
 
-.project img {
-  max-width: 100%;
-}
+
 
 form div {
   margin-bottom: 1rem;
@@ -61,13 +59,3 @@ form span {
   font-size: 0.8rem;
 }
 
-/* src/index.css */
-/* src/index.css */
-.project img, .about-me img {
-  width: 150px;  /* Adjust the width as needed */
-  height: 150px;  /* Adjust the height as needed */
-  border-radius: 50%;  /* Make the image circular */
-  display: block;
-  margin: 0 auto;  /* Center the image */
-  object-fit: cover;  /* Cover the container without stretching */
-}

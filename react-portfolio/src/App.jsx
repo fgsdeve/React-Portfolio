@@ -1,5 +1,5 @@
-// src/App.jsx
 import React, { useState } from 'react';
+import { Container, CssBaseline } from '@mui/material';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import AboutMe from './pages/AboutMe';
@@ -26,11 +26,14 @@ const App = () => {
   };
 
   return (
-    <div>
+    <React.Fragment>
+      <CssBaseline />
       <Header setPage={setPage} />
-      <main>{renderPage()}</main>
+      <Container>
+        {renderPage()}
+      </Container>
       <Footer />
-    </div>
+    </React.Fragment>
   );
 };
 

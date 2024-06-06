@@ -1,9 +1,12 @@
 // src/components/ContactForm.jsx
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
+import emailjs from '@emailjs/browser';
+
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [errors, setErrors] = useState({});
+  const form = useRef();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -21,11 +24,26 @@ const ContactForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    emailjs
+    .sendForm('service_i0494l8', 'template_ahwdvpg', form.current, {
+      publicKey: 'jvVqj93WmfXRzqSva',
+    })
+    .then(
+      () => {
+        console.log('SUCCESS!');
+        setFormData({ name: '', email: '', message: '' })
+      },
+      (error) => {
+        console.log('FAILED...', error.text);
+      },
+    );
+
+
     // Handle form submission
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit}ref={form}>
       <div>
         <label>Name</label>
         <input type="text" name="name" value={formData.name} onChange={handleChange} onBlur={handleBlur} />

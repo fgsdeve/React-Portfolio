@@ -15,14 +15,14 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 44px; 
+    gap: 40px; 
     position: relative;
     width: 100%;
   }
 
   footer a {
     color: #ff4081;
-    margin: 0 10px;
+    margin:  10px;
     text-decoration: none;
   }
   
@@ -32,7 +32,7 @@ footer {
   }
   
   footer .MuiSvgIcon-root {
-    font-size: 40px;
+    font-size: px;
     transition: transform 0.3s;
   }
   

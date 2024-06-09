@@ -32,7 +32,7 @@ const projects = [
   {
     title: 'Weather Forecast',
     image: weather_jpg,
-    deployedLink: 'https://github.com/fgsdeve/Weather-Forecast',
+   /*  deployedLink: 'https://github.com/fgsdeve/Weather-Forecast', */
     repoLink: 'https://github.com/fgsdeve/Weather-Forecast',
   },
   {
@@ -51,7 +51,7 @@ const projects = [
 
 const Portfolio = () => (
   <section>
-    <h2>Portfolio</h2>
+    
     <div className="projects">
       {projects.map((project, index) => (
         <Project key={index} {...project} />

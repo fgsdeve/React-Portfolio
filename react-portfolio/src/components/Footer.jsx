@@ -13,7 +13,7 @@ const Footer = () => (
       <Typography variant="body1" color="inherit">
         &copy; {new Date().getFullYear()} FgsDeve
       </Typography>
-      <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
+      <Box sx={{ display: "flex", alignItems: "center", gap: 3 }}>
         <Link
           href="https://github.com/fgsdeve"
           color="inherit"

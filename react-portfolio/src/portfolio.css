@@ -37,7 +37,7 @@ body {
   }
   
   .project h3 {
-    color: #fff;
+    color: #ffff;
     margin: 15px;
     font-size: 1.5rem;
   }
@@ -65,10 +65,7 @@ body {
     font-size: 0.9rem;
   }
   
-  /* New styles for buttons */
- /*  .MuiButton-root {
-    color: #ce93d8!important;
-  } */
+
   
   .MuiButton-root:hover {
     color: #ffffff !important;

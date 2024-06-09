@@ -1,10 +1,15 @@
-import React, { useState, useRef } from 'react';
-import emailjs from '@emailjs/browser';
-import { Box, TextField, Button, Typography } from '@mui/material';
+import React, { useState, useRef } from "react";
+import emailjs from "@emailjs/browser";
+import { Box, TextField, Button, Typography } from "@mui/material";
 
 const ContactForm = () => {
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
   const [errors, setErrors] = useState({});
+  const [isSubmitted, setIsSubmitted] = useState(false);
   const form = useRef();
 
   const handleChange = (e) => {
@@ -17,21 +22,27 @@ const ContactForm = () => {
     if (!value) {
       setErrors({ ...errors, [name]: `${name} is required` });
     } else {
-      setErrors({ ...errors, [name]: '' });
+      setErrors({ ...errors, [name]: "" });
     }
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     emailjs
-      .sendForm('service_i0494l8', 'template_ahwdvpg', form.current, 'jvVqj93WmfXRzqSva')
+      .sendForm(
+        "service_i0494l8",
+        "template_ahwdvpg",
+        form.current,
+        "jvVqj93WmfXRzqSva"
+      )
       .then(
         () => {
-          console.log('SUCCESS!');
-          setFormData({ name: '', email: '', message: '' });
+          console.log("SUCCESS!");
+          setFormData({ name: "", email: "", message: "" });
+          setIsSubmitted(true); // Set the submission status to true
         },
         (error) => {
-          console.log('FAILED...', error.text);
+          console.log("FAILED...", error.text);
         }
       );
   };
@@ -42,11 +53,11 @@ const ContactForm = () => {
       ref={form}
       onSubmit={handleSubmit}
       sx={{
-        '& .MuiTextField-root': { mb: 2 },
-        maxWidth: '600px',
-        margin: '0 auto',
+        "& .MuiTextField-root": { mb: 2 },
+        maxWidth: "600px",
+        margin: "0 auto",
         padding: 3,
-        backgroundColor: 'background.paper',
+        backgroundColor: "background.paper",
         borderRadius: 1,
         boxShadow: 3,
       }}
@@ -96,6 +107,15 @@ const ContactForm = () => {
       <Button type="submit" variant="contained" color="primary">
         Submit
       </Button>
+      {isSubmitted && (
+        <Typography
+          variant="h6"
+          color="success.main"
+          sx={{ mt: 2, textAlign: "center" }}
+        >
+          Thank you for contacting me!
+        </Typography>
+      )}
     </Box>
   );
 };

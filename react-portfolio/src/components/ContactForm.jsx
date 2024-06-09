@@ -1,7 +1,6 @@
-// src/components/ContactForm.jsx
 import React, { useState, useRef } from 'react';
 import emailjs from '@emailjs/browser';
-
+import { Box, TextField, Button, Typography } from '@mui/material';
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
@@ -25,42 +24,79 @@ const ContactForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     emailjs
-    .sendForm('service_i0494l8', 'template_ahwdvpg', form.current, {
-      publicKey: 'jvVqj93WmfXRzqSva',
-    })
-    .then(
-      () => {
-        console.log('SUCCESS!');
-        setFormData({ name: '', email: '', message: '' })
-      },
-      (error) => {
-        console.log('FAILED...', error.text);
-      },
-    );
-
-
-    // Handle form submission
+      .sendForm('service_i0494l8', 'template_ahwdvpg', form.current, 'jvVqj93WmfXRzqSva')
+      .then(
+        () => {
+          console.log('SUCCESS!');
+          setFormData({ name: '', email: '', message: '' });
+        },
+        (error) => {
+          console.log('FAILED...', error.text);
+        }
+      );
   };
 
   return (
-    <form onSubmit={handleSubmit}ref={form}>
-      <div>
-        <label>Name</label>
-        <input type="text" name="name" value={formData.name} onChange={handleChange} onBlur={handleBlur} />
-        {errors.name && <span>{errors.name}</span>}
-      </div>
-      <div>
-        <label>Email</label>
-        <input type="email" name="email" value={formData.email} onChange={handleChange} onBlur={handleBlur} />
-        {errors.email && <span>{errors.email}</span>}
-      </div>
-      <div>
-        <label>Message</label>
-        <textarea name="message" value={formData.message} onChange={handleChange} onBlur={handleBlur} />
-        {errors.message && <span>{errors.message}</span>}
-      </div>
-      <button type="submit">Submit</button>
-    </form>
+    <Box
+      component="form"
+      ref={form}
+      onSubmit={handleSubmit}
+      sx={{
+        '& .MuiTextField-root': { mb: 2 },
+        maxWidth: '600px',
+        margin: '0 auto',
+        padding: 3,
+        backgroundColor: 'background.paper',
+        borderRadius: 1,
+        boxShadow: 3,
+      }}
+    >
+      <Typography variant="h5" gutterBottom>
+        Contact Me
+      </Typography>
+      <TextField
+        fullWidth
+        label="Name"
+        name="name"
+        variant="outlined"
+        value={formData.name}
+        onChange={handleChange}
+        onBlur={handleBlur}
+        error={Boolean(errors.name)}
+        helperText={errors.name}
+        required
+      />
+      <TextField
+        fullWidth
+        label="Email"
+        name="email"
+        variant="outlined"
+        type="email"
+        value={formData.email}
+        onChange={handleChange}
+        onBlur={handleBlur}
+        error={Boolean(errors.email)}
+        helperText={errors.email}
+        required
+      />
+      <TextField
+        fullWidth
+        label="Message"
+        name="message"
+        variant="outlined"
+        multiline
+        rows={4}
+        value={formData.message}
+        onChange={handleChange}
+        onBlur={handleBlur}
+        error={Boolean(errors.message)}
+        helperText={errors.message}
+        required
+      />
+      <Button type="submit" variant="contained" color="primary">
+        Submit
+      </Button>
+    </Box>
   );
 };
 

@@ -1,0 +1,78 @@
+/* General Styles for the Resume Page */
+body {
+    font-family: "Roboto", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #1c1c1c;
+    color: #ffffff;
+  }
+  
+  h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-top: 20px;
+    color: #ff4081;
+  }
+  
+  h3 {
+    font-size: 2rem;
+    margin-top: 20px;
+    color: #757ce8;
+  }
+  
+  a {
+    color: #ff4081;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    font-size: 1.2rem;
+    margin: 10px 0;
+  }
+  
+  .resume-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .download-button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    background-color: #757ce8;
+    color: #ffffff;
+    text-align: center;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .download-button:hover {
+    background-color: #002884;
+  }
+  
+  .proficiencies-list,
+  .languages-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .proficiencies-list li {
+    margin: 10px 20px;
+  }
+  

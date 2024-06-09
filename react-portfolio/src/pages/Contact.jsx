@@ -1,11 +1,16 @@
-import React from "react";
-import ContactForm from  '../components/ContactForm';
+import React from 'react';
+import { Container, Box, Typography } from '@mui/material';
+import ContactForm from '../components/ContactForm';
 
 const Contact = () => (
-    <section>
-        <h2>Contact</h2>
-        <ContactForm/>
-    </section>
+  <Container>
+    <Box sx={{ py: 5 }}>
+      <Typography variant="h4" gutterBottom>
+        
+      </Typography>
+      <ContactForm />
+    </Box>
+  </Container>
 );
 
 export default Contact;

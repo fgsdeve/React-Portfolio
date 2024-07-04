@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { Button, ButtonGroup } from "@mui/material";
 import { motion } from "framer-motion";
+
 const Navigation = ({ setPage }) => {
-  const [active, setActive] = useState("AboutMe");
+  const [active, setActive] = useState("Home");
 
   const handleNavClick = (page) => {
     setActive(page);
@@ -12,16 +13,15 @@ const Navigation = ({ setPage }) => {
   return (
     <ButtonGroup variant="text" color="inherit">
       <motion.div
-        whileHover={{ scale: 1.2}}
+        whileHover={{ scale: 1.2 }}
         onHoverStart={(e) => {}}
         onHoverEnd={(e) => {}}
-        
       >
         <Button
-          onClick={() => handleNavClick("AboutMe")}
-          color={active === "AboutMe" ? "secondary" : "inherit"}
+          onClick={() => handleNavClick("Home")}
+          color={active === "Home" ? "secondary" : "inherit"}
         >
-          About Me
+          Home
         </Button>
       </motion.div>
       <motion.div
@@ -36,7 +36,6 @@ const Navigation = ({ setPage }) => {
           Portfolio
         </Button>
       </motion.div>
-
       <motion.div
         whileHover={{ scale: 1.2 }}
         onHoverStart={(e) => {}}
@@ -49,13 +48,11 @@ const Navigation = ({ setPage }) => {
           Contact
         </Button>
       </motion.div>
-
       <motion.div
         whileHover={{ scale: 1.2 }}
         onHoverStart={(e) => {}}
         onHoverEnd={(e) => {}}
       >
-        {" "}
         <Button
           onClick={() => handleNavClick("Resume")}
           color={active === "Resume" ? "secondary" : "inherit"}

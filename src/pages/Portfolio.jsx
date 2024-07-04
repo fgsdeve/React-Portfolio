@@ -1,7 +1,6 @@
 import React from 'react';
 import Project from '../components/Project';
-/* import { Container, Grid, Box, Typography } from '@mui/material';
- */import '../portfolio.css';
+import '../portfolio.css';
 import Employee_jpg from '../img/Employee.jpg' 
 import react_jpg from '../img/react.jpg';
 import JATE_png from '../img/JATE.png';

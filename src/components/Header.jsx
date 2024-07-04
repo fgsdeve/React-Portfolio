@@ -26,7 +26,7 @@ const Header = ({ setPage }) => {
       <Toolbar sx={{ justifyContent: "center" }}>
         <motion.div whileHover={{ scale: 1.5 }}>
           <Button onClick={() => setPage("AboutMe")} sx={styles.link}>
-            About Me
+            Home
           </Button>
         </motion.div>
 

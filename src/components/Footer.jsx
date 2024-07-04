@@ -1,7 +1,6 @@
 import React from "react";
 import { AppBar, Toolbar, Typography, Link, Box } from "@mui/material";
 import { GitHub, LinkedIn } from "@mui/icons-material";
-import '../footer.css';
 
 const Footer = () => (
   <AppBar
@@ -33,7 +32,7 @@ const Footer = () => (
           />
         </Link>
         <Link
-          href="https://www.linkedin.com/in/germanogarcia/"
+          href="https://www.linkedin.com/in/francggarcia/"
           color="inherit"
           target="_blank"
           rel="noopener"

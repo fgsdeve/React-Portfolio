@@ -16,6 +16,7 @@ To get a local copy up and running, follow these simple steps:
 
 1. Clone the repository
    -  git clone https://github.com:fgsdeve/React-Portfolio.git
+   -  link to the webpage https://melodic-frangipane-407214.netlify.app/
 
 2. Navigate to the project directory
    - cd react-portfolio

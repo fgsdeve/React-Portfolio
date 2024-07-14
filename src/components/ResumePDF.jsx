@@ -8,6 +8,7 @@ import {
   PDFDownloadLink,
   Image,
 } from "@react-pdf/renderer";
+import profilePic from "../img/resumepic.jpg";
 
 // Create styles
 const styles = StyleSheet.create({
@@ -77,111 +78,58 @@ const styles = StyleSheet.create({
 const ResumeDocument = () => (
   <Document>
     <Page size="A4" style={styles.page}>
-      <View style={styles.sidebar}>
-        <Text style={{ fontSize: 24, textAlign: "center" }}>
-          Francisco Garcia
-        </Text>
-        <Image
-          style={styles.profilePic}
-          src="src/img/resumepic.jpg" // Replace with actual path to profile picture
-        />
-        <View style={styles.contactInfo}>
-          <Text style={{ fontSize: 10, marginTop: 10, marginBottom: 5 }}>
-            {" "}
-            2725 Kickapoo Carver Dr, Pflugerville, TX
-          </Text>
-          <Text style={{ fontSize: 10, marginBottom: 5 }}>+1 512 767-4062</Text>
-          <Text style={{ fontSize: 10, marginBottom: 5 }}>
-            fgsdeve@gmail.com
-          </Text>
-          <Text style={{ fontSize: 10 }}>
-            <a href="https://github.com/fgsdeve" style={{ color: "#fff" }}>
-              https://github.com/fgsdeve
-            </a>
-          </Text>
-        </View>
-        <View style={styles.skills}>
-          <Text
-            style={{
-              fontSize: 14,
-              fontWeight: "bold",
-              marginBottom: 10,
-              marginTop: 10,
-            }}
-          >
-            {" "}
-            Skills{" "}
-          </Text>
-          <Text
-            style={{
-              fontSize: 12,
-              fontWeight: "bold",
-              marginBottom: 10,
-              marginTop: 10,
-            }}
-          >
-            {" "}
-            Technical{" "}
-          </Text>
-          <Text style={styles.bulletPoint}>HTML5</Text>
-          <Text style={styles.bulletPoint}>CSS3</Text>
-          <Text style={styles.bulletPoint}>JavaScript (ES6+)</Text>
-          <Text style={styles.bulletPoint}>React</Text>
-          <Text style={styles.bulletPoint}>Node.js</Text>
-          <Text style={styles.bulletPoint}>Express.js</Text>
-          <Text style={styles.bulletPoint}>MongoDB</Text>
-          <Text style={styles.bulletPoint}>SQL</Text>
-          <Text style={styles.bulletPoint}>Git</Text>
-          <Text style={styles.bulletPoint}>Agile Methodologies</Text>
-          <Text style={styles.bulletPoint}>CRM Systems</Text>
-          {/* Sales & Management Skills  */}
-          <Text
-            style={{
-              fontSize: 12,
-              fontWeight: "bold",
-              marginBottom: 15,
-              marginTop: 10,
-            }}
-          >
-            {" "}
-            Sales & Management{" "}
-          </Text>
-          <Text style={styles.bulletPoint}>Sales Strategy</Text>
-          <Text style={styles.bulletPoint}>Customer Experience</Text>
-          <Text style={styles.bulletPoint}>Team Management</Text>
-          <Text style={styles.bulletPoint}>Data Analysis</Text>
-          <Text style={styles.bulletPoint}>
-            International Business Adaptation
-          </Text>
-          {/* Soft Skills */}
-          <Text
-            style={{
-              fontSize: 12,
-              fontWeight: "bold",
-              marginBottom: 15,
-              marginTop: 15,
-            }}
-          >
-            Soft Skills
-          </Text>
-          <Text style={styles.bulletPoint}>Effective Communication</Text>
-          <Text style={styles.bulletPoint}>Problem Solving</Text>
-          <Text style={styles.bulletPoint}>Team Collaboration</Text>
-          <Text style={styles.bulletPoint}>Leadership Development</Text>
-        </View>
-        {/* Languages */}
-        <View style={styles.languages}>
-          <Text style={{ fontSize: 14, fontWeight: "bold", marginBottom: 10 }}>
-            Languages
-          </Text>
-          <Text style={styles.languageEntry}>English: Fluent</Text>
-          <Text style={styles.languageEntry}>Finnish: Fluent</Text>
-          <Text style={styles.languageEntry}>Spanish: Fluent</Text>
-          <Text style={styles.languageEntry}>Portuguese: Fluent</Text>
-        </View>
-      </View>
+    <View style={styles.sidebar}>
+  <Text style={{ fontSize: 24, textAlign: "center" }}>Francisco Garcia</Text>
+  <Image style={styles.profilePic} src={profilePic} />
+  <View style={styles.contactInfo}>
+    <Text style={{ fontSize: 10, marginTop: 10, marginBottom: 5 }}>
+      2725 Kickapoo Carver Dr, Pflugerville, TX
+    </Text>
+    <Text style={{ fontSize: 10, marginBottom: 5 }}>+1 512 767-4062</Text>
+    <Text style={{ fontSize: 10, marginBottom: 5 }}>fgsdeve@gmail.com</Text>
+    <Text style={{ fontSize: 10, color: "#fff" }}>https://github.com/fgsdeve</Text>
+  </View>
+  <View style={styles.skills}>
+    <Text style={{ fontSize: 14, fontWeight: "bold", marginBottom: 10, marginTop: 10 }}>Skills</Text>
+    <Text style={{ fontSize: 12, fontWeight: "bold", marginBottom: 10, marginTop: 10 }}>Technical</Text>
+    <Text style={styles.bulletPoint}>HTML5</Text>
+    <Text style={styles.bulletPoint}>CSS3</Text>
+    <Text style={styles.bulletPoint}>JavaScript (ES6+)</Text>
+    <Text style={styles.bulletPoint}>React</Text>
+    <Text style={styles.bulletPoint}>Node.js</Text>
+    <Text style={styles.bulletPoint}>Express.js</Text>
+    <Text style={styles.bulletPoint}>MongoDB</Text>
+    <Text style={styles.bulletPoint}>SQL</Text>
+    <Text style={styles.bulletPoint}>Git</Text>
+    <Text style={styles.bulletPoint}>Agile Methodologies</Text>
+    <Text style={styles.bulletPoint}>CRM Systems</Text>
+    {/* Sales & Management Skills  */}
+    <Text style={{ fontSize: 12, fontWeight: "bold", marginBottom: 15, marginTop: 10 }}>Sales & Management</Text>
+    <Text style={styles.bulletPoint}>Sales Strategy</Text>
+    <Text style={styles.bulletPoint}>Customer Experience</Text>
+    <Text style={styles.bulletPoint}>Team Management</Text>
+    <Text style={styles.bulletPoint}>Data Analysis</Text>
+    <Text style={styles.bulletPoint}>International Business Adaptation</Text>
+    {/* Soft Skills */}
+    <Text style={{ fontSize: 12, fontWeight: "bold", marginBottom: 15, marginTop: 15 }}>Soft Skills</Text>
+    <Text style={styles.bulletPoint}>Effective Communication</Text>
+    <Text style={styles.bulletPoint}>Problem Solving</Text>
+    <Text style={styles.bulletPoint}>Team Collaboration</Text>
+    <Text style={styles.bulletPoint}>Leadership Development</Text>
+  </View>
+  {/* Languages */}
+  <View style={styles.languages}>
+    <Text style={{ fontSize: 14, fontWeight: "bold", marginBottom: 10 }}>Languages</Text>
+    <Text style={styles.languageEntry}>English: Fluent</Text>
+    <Text style={styles.languageEntry}>Finnish: Fluent</Text>
+    <Text style={styles.languageEntry}>Spanish: Fluent</Text>
+    <Text style={styles.languageEntry}>Portuguese: Fluent</Text>
+  </View>
+</View>
+
       {/* Summary */}
       <View style={styles.mainContent}>
+        {/* Summary */}
         <View style={styles.section}>
           <Text
             style={{
@@ -194,18 +142,25 @@ const ResumeDocument = () => (
           >
             Summary
           </Text>
-          <Text style={{ fontSize: 11, marginBottom: 8, lineHeight: 1.5, marginTop:10 }}>
+          <Text
+            style={{
+              fontSize: 11,
+              marginBottom: 8,
+              lineHeight: 1.5,
+              marginTop: 10,
+            }}
+          >
             Dynamic Full Stack Web Developer with 6+ years of international
             sales management experience and a recent comprehensive certification
-            from UT Austin. 
-            
-            Proven track record of leading projects to
+            from UT Austin. Proven track record of leading projects to
             completion, enhancing customer satisfaction, and driving team
             productivity. Skilled in JavaScript, HTML, and CSS with a passion
             for mentoring and developing junior talent. Eager to take on a lead
             role in a growing company.
           </Text>
         </View>
+
+        {/* Projects */}
         <View style={styles.section}>
           <Text
             style={{
@@ -214,7 +169,7 @@ const ResumeDocument = () => (
               marginBottom: 5,
               borderBottom: "1px solid #000",
               paddingBottom: 5,
-              lineHeight: 1.5
+              lineHeight: 1.5,
             }}
           >
             Projects
@@ -250,6 +205,7 @@ const ResumeDocument = () => (
             Link: React Portfolio
           </Text>
         </View>
+
         {/* Education */}
         <View style={styles.section}>
           <Text style={styles.subheader}>Education</Text>
@@ -280,6 +236,7 @@ const ResumeDocument = () => (
             participated in Business Club and various business competitions.
           </Text>
         </View>
+
         {/* Past experiences */}
         <View style={styles.section}>
           <Text style={styles.subheader}>Experience</Text>
@@ -315,6 +272,7 @@ const ResumeDocument = () => (
               operational efficiency and cultural integration.
             </Text>
           </View>
+
           <Text style={styles.text}>
             <Text style={styles.strongText}>
               Carlson Rezidor Hotel Group, Helsinki, Finland — Customer

@@ -1,3 +1,4 @@
+// App.jsx
 import React, { useState } from "react";
 import { Container, CssBaseline, ThemeProvider } from "@mui/material";
 import Header from "./components/Header";
@@ -7,13 +8,14 @@ import Portfolio from "./pages/Portfolio";
 import Contact from "./pages/Contact";
 import Resume from "./pages/Resume";
 import { createTheme } from "@mui/material/styles";
+import PDFViewer from "./components/PDFViewer";
 
 const theme = createTheme({
   palette: {
     mode: "dark",
     background: {
-      default: "#000000", // Dark background
-      paper: "#1c1c1c", // Slightly lighter for paper components
+      default: "#000000",
+      paper: "#1c1c1c",
     },
     primary: {
       light: "#757ce8",
@@ -27,7 +29,6 @@ const theme = createTheme({
       dark: "#ba000d",
       contrastText: "#000",
     },
-
     disabled: {
       light: "#ff7961",
       main: "#757575",
@@ -52,7 +53,12 @@ const App = () => {
       case "Contact":
         return <Contact />;
       case "Resume":
-        return <Resume />;
+        return (
+          <div>
+            <Resume />
+            <PDFViewer />
+          </div>
+        );
       default:
         return <Home />;
     }

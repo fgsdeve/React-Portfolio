@@ -1,4 +1,4 @@
-# My React Portfolio
+# React Portfolio
 
 This is a personal portfolio website built with React and Material-UI. The portfolio showcases my projects, skills, and contact information.
 
@@ -16,7 +16,7 @@ To get a local copy up and running, follow these simple steps:
 
 1. Clone the repository
    -  git clone https://github.com:fgsdeve/React-Portfolio.git
-   -  link to the webpage https://melodic-frangipane-407214.netlify.app/
+   -  link to the webpage https://main--fgsdevportfolio.netlify.app/
 
 2. Navigate to the project directory
    - cd react-portfolio

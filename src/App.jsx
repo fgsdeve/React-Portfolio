@@ -6,14 +6,16 @@ import Home from "./pages/Home";
 import Portfolio from "./pages/Portfolio";
 import Contact from "./pages/Contact";
 import Resume from "./pages/Resume";
+import ResumePDF from "./components/ResumePDF";
+import PDFViewer from "./components/PDFViewer";
 import { createTheme } from "@mui/material/styles";
 
 const theme = createTheme({
   palette: {
     mode: "dark",
     background: {
-      default: "#000000", // Dark background
-      paper: "#1c1c1c", // Slightly lighter for paper components
+      default: "#000000",
+      paper: "#1c1c1c",
     },
     primary: {
       light: "#757ce8",
@@ -27,7 +29,6 @@ const theme = createTheme({
       dark: "#ba000d",
       contrastText: "#000",
     },
-
     disabled: {
       light: "#ff7961",
       main: "#757575",
@@ -42,6 +43,7 @@ const theme = createTheme({
 
 const App = () => {
   const [page, setPage] = useState("Home");
+  const [pdfBlobUrl, setPdfBlobUrl] = useState("");
 
   const renderPage = () => {
     switch (page) {
@@ -52,7 +54,13 @@ const App = () => {
       case "Contact":
         return <Contact />;
       case "Resume":
-        return <Resume />;
+        return (
+          <div>
+            <Resume />
+            <ResumePDF setPdfBlobUrl={setPdfBlobUrl} />
+            {pdfBlobUrl && <PDFViewer pdfBlobUrl={pdfBlobUrl} />}
+          </div>
+        );
       default:
         return <Home />;
     }

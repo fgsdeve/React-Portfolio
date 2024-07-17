@@ -1,4 +1,3 @@
-// App.jsx
 import React, { useState } from "react";
 import { Container, CssBaseline, ThemeProvider } from "@mui/material";
 import Header from "./components/Header";
@@ -7,8 +6,9 @@ import Home from "./pages/Home";
 import Portfolio from "./pages/Portfolio";
 import Contact from "./pages/Contact";
 import Resume from "./pages/Resume";
-import { createTheme } from "@mui/material/styles";
+import ResumePDF from "./components/ResumePDF";
 import PDFViewer from "./components/PDFViewer";
+import { createTheme } from "@mui/material/styles";
 
 const theme = createTheme({
   palette: {
@@ -43,6 +43,7 @@ const theme = createTheme({
 
 const App = () => {
   const [page, setPage] = useState("Home");
+  const [pdfBlobUrl, setPdfBlobUrl] = useState("");
 
   const renderPage = () => {
     switch (page) {
@@ -56,7 +57,8 @@ const App = () => {
         return (
           <div>
             <Resume />
-            <PDFViewer />
+            <ResumePDF setPdfBlobUrl={setPdfBlobUrl} />
+            {pdfBlobUrl && <PDFViewer pdfBlobUrl={pdfBlobUrl} />}
           </div>
         );
       default:

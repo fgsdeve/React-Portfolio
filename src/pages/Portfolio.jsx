@@ -3,37 +3,38 @@ import Project from '../components/Project';
 import '../portfolio.css';
 import Employee_jpg from '../img/Employee.jpg' 
 import react_jpg from '../img/react.jpg';
-import JATE_png from '../img/JATE.png';
+import Rent_Ride from '../img/Rent_Ride.webp';
 import tech_blog_jpg from '../img/tech-blog.jpg';
-import weather_jpg from '../img/weather.jpg';
-import Social_NetworkAPI_jpg from '../img/Social Network API.jpg';
+/* import weather_jpg from '../img/weather.jpg';
+ */import Social_NetworkAPI_jpg from '../img/Social Network API.jpg';
 
 
 const projects = [
   {
     title: 'React Portfolio',
     image: react_jpg,
-    deployedLink: 'https://github.com/fgsdeve/React-Portfolio',
+    deployedLink: 'https://main--fgsdevportfolio.netlify.app/',
     repoLink: 'https://github.com/fgsdeve/React-Portfolio',
   },
   {
-    title: 'PWA Text Editor',
-    image: JATE_png,
-   /*  deployedLink: 'https://pwa-text-editor-db8k.onrender.com/',  */
-    repoLink: 'https://github.com/fgsdeve/-PWA-Text-Editor',
+    title: 'Rent&Ride',
+    image: Rent_Ride,
+    deployedLink: 'https://rent-ride-jzpq.onrender.com/',  
+    repoLink: 'https://github.com/14jjfenlason/car-rental.git',
   },
+
   {
-    title: 'Tech Blog',
+    title: 'MERN Book Search Engine',
     image: tech_blog_jpg,
-/*     deployedLink: 'https://github.com/fgsdeve/Tech-Blog',
- */    repoLink: 'https://github.com/fgsdeve/Tech-Blog',
+     deployedLink: 'https://mern-book-search-engine-2-1cso.onrender.com/',
+    repoLink: 'https://github.com/fgsdeve/MERN-Book-Search-Engine.git',
   },
-  {
+ /*  {
     title: 'Weather Forecast',
     image: weather_jpg,
-   /*  deployedLink: 'https://github.com/fgsdeve/Weather-Forecast', */
+    deployedLink: 'https://github.com/fgsdeve/Weather-Forecast', 
     repoLink: 'https://github.com/fgsdeve/Weather-Forecast',
-  },
+  }, */
   {
     title: 'Social Network API',
     image: Social_NetworkAPI_jpg,
